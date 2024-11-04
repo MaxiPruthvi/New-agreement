@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agreement Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Agreement Details</h1>
+</header>
+
+<div class="container">
+    <h2>Details for Agreement No: {{ agreement_id }}</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>SKU Number</th>
+                <th>Cost</th>
+                <th>New Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td>{{ record.SKU_Number }}</td>
+                <td>{{ record.Cost }}</td>
+                <td>
+                    <form method="POST" style="display:inline;">
+                        <input type="text" name="new_costs" placeholder="New Cost" required>
+                        <input type="hidden" name="sku_numbers" value="{{ record.SKU_Number }}">
+                        <button type="submit">Save</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <a href="{{ url_for('agreements') }}">
+        <button class="back-button">Back to Agreements</button>
+    </a>
+    
+    <footer>
+        <p>
+            <a href="{{ url_for('audit') }}">
+                <button>View Audit Records</button>
+            </a>
+        </p>
+        <p>
+            <a href="{{ url_for('logout') }}">
+                <button>Logout</button>
+            </a>
+        </p>
+    </footer>
+</div>
+
+</body>
+</html>

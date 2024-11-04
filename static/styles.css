@@ -1,0 +1,149 @@
+/* Additional styles for agreements.html */
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Space between the header and table */
+}
+
+table th, table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 12px; /* Increased padding for better spacing */
+}
+
+table th {
+    background-color: #35424a;
+    color: white;
+    font-weight: bold;
+}
+
+/* Hover effect for rows */
+table tbody tr:hover {
+    background-color: #f2f2f2; /* Light grey on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    table {
+        font-size: 14px; /* Smaller text for mobile */
+    }
+
+    table th, table td {
+        padding: 10px; /* Less padding for mobile */
+    }
+}
+/* Container Styles */
+.container {
+    padding: 20px;
+    background-color: #ffffff; /* White background for the container */
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2; /* Light gray for headers */
+    font-weight: bold;
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9; /* Light gray on row hover */
+}
+
+/* Button Styles */
+button {
+    padding: 10px 15px;
+    background-color: #35424a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #35424a;
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.back-button {
+    background-color: #35424a; /* Default button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 12px 20px; /* Padding for button */
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.back-button:hover {
+    background-color: #35424a; /* Darker blue on hover */
+    padding: 12px 20px; /* Padding for button */
+
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    margin: 20px 0;
+    color: #777;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+button {
+    background-color: #35424a; /* Default button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 12px 20px; /* Padding for button */
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #35424a; /* Color on hover */
+    transform: scale(1.02); /* Slightly increase size on hover */
+}
+/* Header Styles */
+h1 {
+    text-align: center; /* Center align the header */
+    font-size: 36px; /* Increase the font size */
+    color: #35424a; /* Set a custom color */
+    margin: 20px 0; /* Add margin for spacing */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+h2 {
+    text-align: center; /* Center align the subheader */
+    font-size: 28px; /* Increase the font size */
+    color: #4a4a4a; /* Set a custom color */
+    margin: 15px 0; /* Add margin for spacing */
+    font-weight: normal; /* Set font weight to normal */
+}
