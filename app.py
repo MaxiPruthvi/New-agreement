@@ -3,7 +3,8 @@ import mysql.connector
 import os
 
 app = Flask(__name__)
-app.secret_key = os.environ.get('SECRET_KEY', os.urandom(24))  # Secret key from environment for security
+# Set the secret key for session management, retrieving from environment variable or generating one
+app.secret_key = os.environ.get('SECRET_KEY', os.urandom(24))  
 
 # Database connection function
 def get_db_connection():
@@ -65,14 +66,14 @@ def agreement_details(agreement_id):
                 sku_number = sku_numbers[i]
                 
                 # Update both New_Cost and Cost columns
-                cursor.execute("""
+                cursor.execute(""" 
                     UPDATE PA_Detail 
                     SET New_Cost = %s, Cost = %s 
                     WHERE Agreement_No = %s AND SKU_Number = %s
                 """, (new_cost, new_cost, agreement_id, sku_number))
 
                 # Insert the audit entry
-                cursor.execute("""
+                cursor.execute(""" 
                     INSERT INTO PA_Audit (Agreement_No, SKU_Number, Old_Cost, New_Cost, UpdatedBy)
                     SELECT Agreement_No, SKU_Number, Cost, %s, %s 
                     FROM PA_Detail 
@@ -115,8 +116,6 @@ def logout():
     session.pop('user', None)
     return redirect(url_for('login'))
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
 if __name__ == '__main__':
     # Run the Flask app on the specified host and port
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
